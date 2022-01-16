@@ -2,24 +2,34 @@ import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import theme from '../../theme';
 import AppBarTab from './AppBarTab';
-import { Link } from "react-router-native";
+import Constants from 'expo-constants';
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: Constants.statusBarHeight,
     flexDirection: 'row',
+    justifyContent:'center',
     backgroundColor: theme.colors.textPrimary,
-    paddingBottom: 5,
   },
 });
 
 const AppBar = () => {
 
-  const nav =['Repositories', 'SignIn'];
+  const nav =[
+     {
+        name:'Repositories',
+        link: '/',
+   },
+    { 
+       name:'SignIn',
+       link:'signin'
+     } ];
+
   return (
     <View style={styles.container}>
       <ScrollView horizontal>
-        <Link to="/"><AppBarTab text={nav[0]}/></Link>
-        <Link to="/signin"><AppBarTab text={nav[1]}/></Link>
+       <AppBarTab nav={nav[0]}/>
+       <AppBarTab nav={nav[1]}/>
       </ScrollView>
     </View>
   );

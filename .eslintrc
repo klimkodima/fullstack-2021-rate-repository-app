@@ -1,22 +1,25 @@
 {
-    "plugins": ["react"],
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    },
-    "ecmaVersion": 2015,
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:jest/recommended"
-    ],
-    "parser": "babel-eslint",
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "react/prop-types": "off",
-      "semi": "error"
+  "plugins": ["react", "react-native"],
+  "settings": {
+    "react": {
+      "version": "detect"
     }
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "react-native/react-native": true
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
+    
   }
+}

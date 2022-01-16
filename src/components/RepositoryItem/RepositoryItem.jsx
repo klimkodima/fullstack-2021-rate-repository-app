@@ -3,7 +3,6 @@ import { Text, View, StyleSheet } from 'react-native';
 import Avatar from './Avatar';
 import Details from './Details';
 import theme from '../../theme';
-import { Link } from "react-router-native";
 
 const RepositoryItem = ({ item }) => {
 
@@ -37,7 +36,6 @@ const RepositoryItem = ({ item }) => {
     },
     description:{
       padding: 5,
-      flexWrap: 'wrap',
     }
   });
 
@@ -46,9 +44,7 @@ const RepositoryItem = ({ item }) => {
       <View style={styles.flexContainer}>
         <Avatar style={styles.avatar} avatarUrl={item.ownerAvatarUrl} />
         <View style={styles.infornation}>
-          <Link to="/signin">
           <Text style={styles.name}> {item.fullName}</Text>
-          </Link>
           <Text style={styles.description}> {item.description}</Text>
           <Text style={styles.button}> {item.language}</Text>
         </View>

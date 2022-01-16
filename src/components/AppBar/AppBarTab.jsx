@@ -1,22 +1,21 @@
 import React from 'react';
 import { Text, StyleSheet, Pressable } from 'react-native';
-import Constants from 'expo-constants';
 import theme from '../../theme';
+import { Link } from "react-router-native";
 
 const styles = StyleSheet.create({
     tab:{
-      paddingTop: Constants.statusBarHeight,
       color: theme.colors.appBarText,
       fontSize: theme.fontSizes.subheading,
-      marginTop: 20,
+      margin:5,
       padding: 10,
      }
   });
   
-const AppBarTab = ({text}) => {
+const AppBarTab = ({ nav }) => {
   return (
     <Pressable>
-      <Text style={styles.tab}>{text}</Text>
+      <Link to={nav.link}><Text style={styles.tab}>{nav.name}</Text></Link>
     </Pressable>
   );
 };

@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Route, Routes, Navigate } from 'react-router-native';
+import { Route, Routes } from 'react-router-native';
 import RepositoryList from './RepositoryList';
 import AppBar from './AppBar/AppBar';
 import theme from '../theme';
 import SignIn from './SignIn';
 
 const Main = () => {
-
-  const [loggedIn, setLoggedIn] = useState(null);
 
   const styles = StyleSheet.create({
     container: {
