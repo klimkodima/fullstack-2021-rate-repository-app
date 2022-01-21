@@ -1,33 +1,26 @@
 import React from 'react';
 import { Text, View, StyleSheet} from 'react-native';
 import theme from '../../theme';
+import { roundNumber } from '../../utils/roundNumber'
 
 const Details = ({ item }) => {
-
-  const roundNumber = (count) => {
-    let roundCount = count;
-    if (count >= 1000) {
-        roundCount = `${(count / 1000).toFixed(1)}k`;
-    }
-    return roundCount;
-};
 
   return (
     <View style={styles.row}>
       <View style={styles.block}>
-        <Text style={styles.number}>{roundNumber(item.stargazersCount)}</Text>
+        <Text style={styles.number} testID='stargazersCount' >{roundNumber(item.stargazersCount)}</Text>
         <Text>Stars</Text>
       </View>
       <View style={styles.block}>
-        <Text style={styles.number}>{roundNumber(item.forksCount)}</Text>
+        <Text style={styles.number} testID='forksCount' >{roundNumber(item.forksCount)}</Text>
         <Text>Forks</Text>  
       </View>
       <View style={styles.number} style={styles.block}>
-        <Text style={styles.number}>{item.reviewCount}</Text>
+        <Text style={styles.number} testID='reviewCount' >{item.reviewCount}</Text>
         <Text>Reviews</Text>
       </View>
       <View style={styles.block}>
-        <Text style={styles.number}>{item.ratingAverage}</Text>
+        <Text style={styles.number} testID='ratingAverage' >{item.ratingAverage}</Text>
         <Text>Rating</Text>
       </View>
     </View>

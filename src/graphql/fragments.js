@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 
-const REPOSITORY_DETAILS = gql`
+
+export const REPOSITORY_DETAILS = gql`
   fragment RepositoryDetails on Repository {
     id
     fullName
@@ -12,5 +13,24 @@ const REPOSITORY_DETAILS = gql`
     description
     language
   }
-`
-export default REPOSITORY_DETAILS;
+`;
+
+export const USER_DETAILS = gql`
+  fragment UserDetails on User {
+    id
+    username
+  }
+`;
+
+export const REVIEW_DETAILS = gql`
+  fragment ReviewDetails on Review {
+    id
+    text
+    rating
+    createdAt
+    repositoryId
+    user {
+      ...UserDetails
+    }
+  }
+`;
